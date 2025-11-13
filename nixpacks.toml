@@ -1,0 +1,13 @@
+# Nixpacks Configuration for Railway
+
+[phases.setup]
+nixPkgs = ['nodejs_20']
+
+[phases.install]
+cmds = ['npm install']
+
+[phases.build]
+cmds = ['npm run update-data -- --years=2024,2025 || echo "Data update failed, using existing data"']
+
+[start]
+cmd = 'npm start'
